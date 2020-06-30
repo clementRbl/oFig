@@ -1,0 +1,27 @@
+{
+  "name": "atelier-ofig-jpruliere",
+  "version": "1.0.0",
+  "description": "## Étape 1: Mise en place",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Iliade/atelier-ofig-jpruliere.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Iliade/atelier-ofig-jpruliere/issues"
+  },
+  "homepage": "https://github.com/O-clock-Iliade/atelier-ofig-jpruliere#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "pg": "^8.2.1"
+  }
+}
