@@ -1,11 +1,11 @@
 // 1. require le module
-const pg = require('pg');
+const {Client} = require('pg');
 
 // 2. Créer un client
-const client = new pg.Client(process.env.PG_URL);
+const db = new Client();
 
 // 3. Connecter le client
-client.connect();
+db.connect();
 
 // 4. Exporter le client connecté
-module.exports = client;
+module.exports = db;

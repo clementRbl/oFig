@@ -11,50 +11,35 @@
               <th>Prix HT</th>
             </thead>
             <tbody>
+             <% for (let figurine of cart) { %>  
               <tr>
                 <td>
-                  <img class="img-thumbnail img-cart-list" src="./images/tifa.png" alt="">
+                  <img class="img-thumbnail img-cart-list" src="/images/<%= figurine.name.
+                  toLowerCase()%>.png" alt="<%= figurine.name %>">
                   <div class="item-description">
-                      <h5 class="item-title">Tifa</h5>
-                      <p class="item-prize">$24.99</p>
+                      <h5 class="item-title"><%= figurine.name %> </h5>
+                      <p class="item-prize">$<%= figurine.price %> </p>
                   </div>
                 </td>
 
                 <td>
-                  <strong>1</strong>
-                  <a href="#">+</a> / <a href="#">-</a>
+                  <strong><%= figurine.quantity %> </strong>
+                  <a href="/cart/add/<%= figurine.id %> ">+</a> / <a href="/cart/remove/<%= 
+                  figurine.id %>">-</a>
                 </td>
 
                 <td>
-                  <p class="item-subtotal">$24.99</p>
+                  <p class="item-subtotal">$<%= figurine.quantity * figurine.price %> </p>
                 </td>
               </tr>
-
-              <tr>
-                <td>
-                  <img class="img-thumbnail img-cart-list" src="./images/cloud.png" alt="">
-                  <div class="item-description">
-                      <h5 class="item-title">Cloud</h5>
-                      <p class="item-prize">$24.99</p>
-                  </div>
-                </td>
-
-                <td>
-                  <strong>2</strong>
-                  <a href="#">+</a> / <a href="#">-</a>
-                </td>
-                <td>
-                  <p class="item-subtotal">$49.98</p>
-                </td>
-              </tr>
-
+            <% } %> 
               <!-- Frais de port -->
               <tr>
                 <td class="text-right" colspan="2">
                   Frais de port
                 </td>
                 <td class="item-subtotal">
-                  $9.99
+                  $<%= totals.shipping %> 
                 </td>
               </tr>
 
@@ -64,7 +49,7 @@
                     Total HT
                   </td>
                   <td class="item-subtotal">
-                    $84.96
+                    $<%= totals.totalHT %> 
                   </td>
                 </tr>
 
@@ -73,7 +58,7 @@
                     TVA 20%
                   </td>
                   <td class="item-subtotal">
-                    $16.99
+                    $<%= totals.tva %> 
                   </td>
                 </tr>
 
@@ -82,7 +67,7 @@
                     Total TTC
                   </td>
                   <td class="item-total">
-                    $101.94
+                    $<%= totals.totalTTC %> 
                   </td>
                 </tr>
 
